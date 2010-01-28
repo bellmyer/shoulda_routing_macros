@@ -1,13 +1,31 @@
-ShouldaRoutingMacros
+Shoulda Routing Macros
 ====================
 
-Introduction goes here.
+This is a simple plugin I plan to combine with my other macros to create a package at a later date.
 
 
-Example
-=======
+Examples
+========
 
-Example goes here.
+If your route is:
 
+    map.resources :checkens do |chickens|
+      chickens.resources :eggs
+    end
 
-Copyright (c) 2010 [name of plugin creator], released under the MIT license
+Then your tests should be:
+
+    should_map_resources :chickens
+    should_map_nested_resources :chickens, :eggs
+
+If you have a singlton resource:
+
+    map.resource :one_model_to_rule_them_all
+
+Then your test will look very similar:
+
+    should_map_resource :one_model_to_rule_them_all
+
+It's fairly intuitive, but I'll add more documentation later.
+
+Copyright (c) 2010 Jaime Bellmyer, released under the MIT license
