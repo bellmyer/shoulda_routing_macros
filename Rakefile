@@ -21,3 +21,18 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "shoulda_routing_macros"
+    gemspec.summary = "easy shoulda testing of restful routes"
+    gemspec.description = "Routes are an important part of your application.  The larger the app, the more valuable test-driven routing will be.  This gem makes testing routes as easy as defining them."
+    gemspec.email = "ruby@kconrails.com"
+    gemspec.homepage = "http://github.com/bellmyer/shoulda_routing_macros"
+    gemspec.authors = ["Jaime Bellmyer"]
+  end
+  Jeweler::GemcutterTasks.new
+rescue LoadError
+  puts "Jeweler not available. Install it with: gem install jeweler"
+end
